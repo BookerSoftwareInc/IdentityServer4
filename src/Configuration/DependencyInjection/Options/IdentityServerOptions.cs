@@ -2,6 +2,9 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using Microsoft.AspNetCore.Http;
+using System;
+
 namespace IdentityServer4.Configuration
 {
     /// <summary>
@@ -16,7 +19,7 @@ namespace IdentityServer4.Configuration
         /// <value>
         /// Unique name of this server instance, e.g. https://myissuer.com
         /// </value>
-        public string IssuerUri { get; set; }
+        public Func<HttpContext,string> IssuerUri { get; set; }
 
         /// <summary>
         /// Gets or sets the origin of this server instance, e.g. https://myorigin.com.

@@ -124,7 +124,7 @@ namespace IdentityServer4.Extensions
             // if they've explicitly configured a URI then use it,
             // otherwise dynamically calculate it
             var options = context.RequestServices.GetRequiredService<IdentityServerOptions>();
-            var uri = options.IssuerUri;
+            var uri = options.IssuerUri?.Invoke(context);
             if (uri.IsMissing())
             {
                 uri = context.GetIdentityServerOrigin() + context.GetIdentityServerBasePath();

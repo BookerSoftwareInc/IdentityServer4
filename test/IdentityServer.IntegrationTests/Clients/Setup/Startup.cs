@@ -19,7 +19,7 @@ namespace IdentityServer4.IntegrationTests.Clients
 
             var builder = services.AddIdentityServer(options =>
             {
-                options.IssuerUri = "https://idsvr4";
+                options.IssuerUri = (ctx)=>"https://idsvr4";
 
                 options.Events = new EventsOptions
                 {

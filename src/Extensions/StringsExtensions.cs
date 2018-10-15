@@ -82,6 +82,12 @@ namespace IdentityServer4.Extensions
         }
 
         [DebuggerStepThrough]
+        public static bool IsPresent(this Func<HttpContext, string> value)
+        {
+            return value != null;
+        }
+
+        [DebuggerStepThrough]
         public static bool IsPresent(this string value)
         {
             return !string.IsNullOrWhiteSpace(value);

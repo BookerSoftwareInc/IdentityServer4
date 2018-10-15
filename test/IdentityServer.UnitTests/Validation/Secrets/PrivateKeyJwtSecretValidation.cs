@@ -32,7 +32,7 @@ namespace IdentityServer4.Tests.Validation.Secrets
                 new MockHttpContextAccessor(
                     new IdentityServerOptions()
                         {
-                            IssuerUri = "https://idsrv3.com"
+                            IssuerUri = (ctx)=>"https://idsrv3.com"
                         }
                     ),
                     new LoggerFactory().CreateLogger<PrivateKeyJwtSecretValidator>()
